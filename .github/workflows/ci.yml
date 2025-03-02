@@ -37,10 +37,8 @@ jobs:
           pip install -r requirements.txt
       - name: Install pytest
         run: pip install pytest  # Додано встановлення pytest
-
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
-
       - name: Run tests
         run: |
           pytest
