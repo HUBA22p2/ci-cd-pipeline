@@ -21,9 +21,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Set PYTHONPATH
-        run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
-        
       - name: Запуск тестів
         run: python -m unittest discover -s tests
 
@@ -40,6 +37,10 @@ jobs:
           pip install -r requirements.txt
       - name: Install pytest
         run: pip install pytest  # Додано встановлення pytest
+
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
+
       - name: Run tests
         run: |
           pytest
