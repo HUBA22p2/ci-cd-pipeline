@@ -23,6 +23,7 @@ jobs:
 
       - name: Запуск тестів
         run: python -m unittest discover -s tests
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -34,6 +35,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+      - name: Install pytest
+        run: pip install pytest  # Додано встановлення pytest
       - name: Run tests
         run: |
           pytest
